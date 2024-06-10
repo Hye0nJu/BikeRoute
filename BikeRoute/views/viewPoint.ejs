@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeRoute</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3mtn5g0cxq"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab7b9fbfd88ffceaca8be9814ef6fdaf&libraries=services"></script>
+    <link rel="stylesheet" href="/stylesheets/viewPoint.css" />
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <div class="container">
+            <input id="responsive-menu" type="checkbox">
+            <label for="responsive-menu"><div id="text"><a href="/index">BikeRoute</a></div><span id="menu-icon"></span></label>
+            <div id="overlay"></div>
+            <ul>
+                <li><a href="/map">지도보기</a></li>
+                <li><a href="/routeSet">경로설정</a></li>
+                <li><a href="/viewPoint">뷰포인트</a></li>
+                <li><a href="http://www.roverp6cars.com/">주행기록</a></li>
+                <li><a href="http://www.irishwrecksonline.net/">커뮤니티</a></li>
+                <li><a href="http://www.arngren.net/">설정</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="map" style="width: 100%; height: 100vh;"></div>
+        <div id="menu_wrap">
+            <form onsubmit="searchPlaces(); return false;">
+                키워드 : <input type="text" autocomplete='off' value="군산대학교" id="keyword" size="15">
+                <button type="submit">검색하기</button>
+            </form>
+            <hr>
+            <div id="placesList"></div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="/javascripts/viewPoint.js"></script>
+</body>
+</html>
